@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie ie6" lang="zh-CN" dir="ltr"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7" lang="zh-CN" dir="ltr"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="zh-CN" dir="ltr"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="zh-CN" dir="ltr"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="zh-CN" dir="ltr">
+	<!--<![endif]-->
+	<head>
+		<meta charset="gb2312" />
+		<title>装修</title>
+		<meta name="description" content="装修"/>
+		<meta name="keywords" content="装修"/>
+        <link href="http://style.china.alibaba.com/css/lib/fdev-v4/reset/reset-min.css" rel="stylesheet">
+        <link href="http://style.china.alibaba.com/css/lib/fdev-v4/common/common-min.css" rel="stylesheet">
+		<style type="text/css">
+            body{
+                text-align:center;
+            }
+            .doc{
+                text-align:left;
+            }
+			.w952{
+                width:950px;
+                padding:0 1px;
+                margin:0 auto;
+            }
+			.banner1{
+                background:url("http://img.china.alibaba.com/cms/upload/2012/879/733/337978_681975369.png");
+                height:92px;
+            }
+            .action{
+                position: relative;
+                margin:20px 0 0 40px;
+                padding-left:40px;
+                background:url("http://img.china.alibaba.com/cms/upload/2012/789/733/337987_681975369.png") no-repeat;
+            }
+            .action  p{
+                color:#1d3650;
+                margin-top:5px;
+            }
+            .action .bannerTitle{
+                width:147px;
+                height:18px;
+                border:1px solid #d9d9d9;
+                margin-right:8px;
+                color:#cc0000;
+            }
+            .buyIm{
+                background:url("http://img.china.alibaba.com/cms/upload/2012/421/833/338124_681975369.png") no-repeat;
+                width:131px;
+                height:45px;
+                position:absolute;
+                top:10px;
+                left:400px;
+            }
+            .bannershow{
+                margin-top:30px;
+                position:relative;
+            }
+            .bannershow p {
+                font-size: 34px;
+    left: 60px;
+    position: absolute;
+    top: 70px;
+    font-weight:bold;
+    font-family:"微软雅黑";
+            }
+            .tab-nav{
+                background-color:#000;
+                height:57px;
+            }
+            .tab-nav ul{
+                 float:right;
+                 margin:20px 25px;
+            }
+            .window .f-tab-b{
+                height:344px;
+            }
+            .window .f-tab-t{
+                width:14px;
+                height:14px;
+                background-color:#fff;
+                display:inline-block;
+                text-align:center;
+                float:left;
+                margin-right:5px;
+                border:1px solid #757575;
+            }
+            .window .f-tab-t a{
+                color:#000;
+                line-height: 12px;
+            }
+		</style> 
+	</head>
+	<body>
+        <div id="doc" class="doc">
+            <div id="content" class="w952">
+				<div class="banner1">
+				</div>
+				<div class="action">
+                    <p>输入公司名字，中文不超过9个字，然后点击生成按钮。</p>
+                    <p>
+                        <input type="text" class="bannerTitle" value="输入招牌文字"/>
+                        <select id="select">
+                            <option value="0">4张图片轮播</option>
+                            <option value="1">幻动切入+动感折页</option>
+                            <option value="2">文字跳跃+多种动画效果</option>
+                        </select>
+                        <a class="buyIm" href="#"></a>
+                    </p>
+				</div>
+                <div class="bannershow">
+                    <embed src="3.swf" style="width:950px" wmode="opaque"></embed>
+                    <p>刷卡东方丽景 </p>
+                </div>
+                <div class="window">
+                    <div id="tab5" class="tab-imgs">
+
+                            
+
+                            <div class="f-tab-b">
+
+                                <img src="http://img.china.alibaba.com/cms/upload/2012/071/833/338170_681975369.png" />
+
+                            </div>
+
+                            <div class="f-tab-b">
+
+                                <img src="http://img.china.alibaba.com/cms/upload/2012/071/833/338170_681975369.png" />
+
+                            </div>
+
+                            <div class="f-tab-b">
+
+                                <img src="http://img.china.alibaba.com/cms/upload/2012/071/833/338170_681975369.png" />
+
+                            </div>
+                            <div class="tab-nav">
+                                <ul class="clr">
+
+                                    <li class="f-tab-t"><a href="#">1</a></li>
+
+                                    <li class="f-tab-t"><a href="#">2</a></li>
+
+                                    <li class="f-tab-t"><a href="#">3</a></li>
+
+                                 </ul>
+                            </div>
+
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+	</body>
+<script type=text/javascript src="http://style.china.alibaba.com/fdevlib/js/fdev-v4/core/fdev-min.js"></script>
+<script>
+jQuery(function($){
+
+    $.use('ui-tabs-effect', function(){
+
+        var tab5 = $('#tab5').tabs({
+            isAutoPlay:true
+        });
+
+        //自定义select事件
+
+        /*tab5.bind('tabsselect', function(e, data){
+
+            if(data.index===1){
+
+                alert('select');
+
+            }
+
+        });*/
+
+    });
+
+    // $.use('ui-tabs-effect', function(){
+
+    //     var tab5 = $('#tab6').tabs({
+    //         isAutoPlay:true,
+    //         effect:'fade'
+    //     });
+
+    //     //自定义select事件
+
+    //     /*tab5.bind('tabsselect', function(e, data){
+
+    //         if(data.index===1){
+
+    //             alert('select');
+
+    //         }
+
+    //     });*/
+
+
+
+    // });
+
+    $("#select").bind("change",function(){
+        if(this.value === '1'){
+            var tab5 = $('#tab5').tabs({
+             isAutoPlay:true,
+             effect:'fade'
+         });
+        }
+    });
+
+});
+
+</script>
+</html>

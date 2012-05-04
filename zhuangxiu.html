@@ -223,7 +223,7 @@
                         </li>
                         <li class="dataShow">
                             <h2>旺铺日均访问量</h2>
-                            <div class="chart">
+                            <div class="chart" id="chart">
                             </div>
                             <a href="#" class="goDetail">查看详情</a>
                             <a href="#" class="buy"></a>
@@ -265,7 +265,108 @@ jQuery(document).ready(function(){
         var dl = $('#askAndAnswer dl')
           , length = dl.length
           , i = 0;
-        dlShow(i)
+        dlShow(i);
+		var data =     {
+    "data" : {
+    "indexAxis" : {
+    "name" : "",
+    "unit" : "",
+    "labels" : ["装修前" ,"装修后"]
+    },
+    "valueAxis" : {
+    "name" : "",
+    "unit" : ""
+    },
+    "dataSets" : [
+    {
+    "name" : "店铺流量",
+    "values" : [32740, 66156]
+    },
+    {
+    "name" : "成交量",
+    "values" : [143298, 584976]
+    }
+    ]
+    }
+    };
+		var css = 'chart {\
+    colors            : #0264cf,#5f9618;\
+    smooth            : true;\
+    leftAxisVisibility : visible;\
+    paddingLeft       : 0;\
+    paddingTop        : 50;\
+	width: 180;\
+    height: 180;\
+}\
+canvas {\
+    borderThickness   : 0;\
+    borderColor       : #F1F1F1;\
+    backgroundColor2  : #F8F8F8;\
+    priLineColor      : #F2F2F2;\
+    priLineThickness  : 1;\
+    secLineStyle      : dashed;\
+    secLineThickness  : 1;\
+    secLineColor      : #F2F2F2;\
+}\
+bar {\
+    dropshadow        : none;\
+    dropShadow.hl       : light;\
+    borderThickness   : 1;\
+    borderColor       : #FFFFFF;\
+    valueVisibility : visible;\
+}\
+yAxis {\
+    lineColor     : #666666;\
+    lineThickness : 3;\
+    tickThickness : 0;\
+    labelPosition : center;\
+	labelVisibility:none;\
+}\
+xAxis {\
+    lineColor     : #666666;\
+    lineThickness : 3;\
+    tickThickness : 0;\
+    labelGap      : auto;\
+    labelPosition : center; \
+}\
+xAxis label {\
+    color         : #666666;\
+}\
+yAxis label {\
+    color         : #666666;\
+    visibility      : hidden;\
+}\
+tooltip { \
+    maxchar       : 0;\
+} \
+line dot {\
+    color           : #FFFFFF;\
+    borderColor     : inherit#color;\
+    borderThickness : 2;\
+    shape           : circle;\
+    radius          : 3;\
+    color.hl        : inherit#color;\
+    borderColor.hl  : #FFFFFF;\
+    radius.hl       : 7;\
+    dropShadow.hl   : light;\
+}\
+legend {\
+    position        : bottom;\
+    align           : center;\
+}';
+console.log(css)
+		$.use('ui-flash-chart', function(){
+			chart = $('#chart').flash({
+				module:'chart',  
+				type:'bar',  
+				width: 220,  
+				height: 240, 
+				flashvars: {  
+				    css:css,
+					data:JSON.stringify(data)
+				}
+		    });
+	    });
         function dlShow(i){
             $(dl[i]).fadeIn(1500,function(){
                 if(i < length){
